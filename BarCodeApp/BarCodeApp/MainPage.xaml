@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:material="clr-namespace:XF.Material.Forms.UI;assembly=XF.Material"
+              material:MaterialNavigationPage.AppBarColor="White" 
+             material:MaterialNavigationPage.StatusBarColor="White"
+             material:MaterialNavigationPage.AppBarTitleTextFontFamily="Roboto" 
+             material:MaterialNavigationPage.AppBarTitleTextFontSize="14" 
+           
+             material:MaterialNavigationPage.AppBarTitleTextAlignment="Start"
+             material:MaterialNavigationPage.HasShadow="False"
+             mc:Ignorable="d"
+             x:Class="BarCodeApp.MainPage" BackgroundColor="White">
+
+    <Grid>
+
+        <Grid RowSpacing="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Image Grid.Row="0" VerticalOptions="StartAndExpand" WidthRequest="200" Source="barcodi" Aspect="AspectFit"/>
+            <StackLayout Grid.Row="1" VerticalOptions="Fill">
+                <material:MaterialButton x:Name="btLer" Text="Ler" TextColor="Black" FontSize="Large" BackgroundColor="White" ButtonType="Flat" Clicked="btGerar_Clicked"/>
+                <material:MaterialButton x:Name="btGerar" Text="Gerar" TextColor="Black" FontSize="Large" BackgroundColor="White" ButtonType="Flat" Clicked="btGerar_Clicked"/>
+            </StackLayout>
+            <material:MaterialLabel Grid.Row="2" VerticalOptions="StartAndExpand" Text="Criado por Abel Tomás" HorizontalOptions="CenterAndExpand"/>
+        </Grid>
+
+
+
+    </Grid>
+</ContentPage>
