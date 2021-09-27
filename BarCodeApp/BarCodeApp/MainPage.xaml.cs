@@ -1,10 +1,12 @@
-﻿using System;
+﻿using BarCodeApp.View;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
+using XF.Material.Forms.UI;
 
 namespace BarCodeApp
 {
@@ -18,9 +20,11 @@ namespace BarCodeApp
             InitializeComponent();
         }
 
-        private void btGerar_Clicked(object sender, EventArgs e)
+        private async void btGerar_Clicked(object sender, EventArgs e)
         {
-          
+            Button bt = (sender as Button);
+            if (bt.Text.ToUpper().Equals("LER"))
+                await Navigation.PushAsync(new MaterialNavigationPage(new LerCodigo()));
         }
     }
 }
