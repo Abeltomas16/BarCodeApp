@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:material="clr-namespace:XF.Material.Forms.UI;assembly=XF.Material"
+             material:MaterialNavigationPage.AppBarColor="White" 
+             material:MaterialNavigationPage.StatusBarColor="White"
+             material:MaterialNavigationPage.AppBarTitleTextFontFamily="Roboto" 
+             material:MaterialNavigationPage.AppBarTitleTextFontSize="14" 
+             material:MaterialNavigationPage.AppBarTitleTextColor="Black"      
+             material:MaterialNavigationPage.AppBarTitleTextAlignment="Start"
+             material:MaterialNavigationPage.HasShadow="False"
+             xmlns:zxing="clr-namespace:ZXing.Net.Mobile.Forms;assembly=ZXing.Net.Mobile.Forms"
+             xmlns:zcommom="clr-namespace:ZXing.Common;assembly=zxing"
+             xmlns:shade="clr-namespace:Sharpnado.Shades;assembly=Sharpnado.Shadows"
+             mc:Ignorable="d"
+             x:Class="BarCodeApp.View.GerarCodigo"
+             Title="Registrar cliente">
+    <ContentPage.Content>
+        <ScrollView>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <shade:Shadows Grid.Row="0" CornerRadius="20" BackgroundColor="Blue"
+                        VerticalOptions="Start"
+                           Shades="{shade:SingleShade Offset='0,10',
+                                                       Color=Black,
+                                                        BlurRadius=20,
+                                                        Opacity=0.8}">
+
+                    <StackLayout BackgroundColor="White" Padding="10">
+                        <material:MaterialTextField
+                            x:Name="txtNome"
+                            Placeholder="Nome"
+                            Margin="0"
+                            HelperText="Obrigatório"
+                            IsClippedToBounds="True"
+                            InputType="Default"                          
+                            MaxLength="15"
+                            LeadingIcon="name"/>
+                        <material:MaterialTextField
+                            x:Name="txtKey"
+                            Placeholder="Key secret"
+                            Margin="0"
+                            HelperText="Obrigatório"
+                            ErrorText="Erro"
+                            MaxLength="9"
+                            InputType="Text"
+                            LeadingIcon="pass"/>
+                        <material:MaterialTextField
+                            x:Name="txtFone"
+                            Placeholder="Telefone"
+                            Margin="0"
+                            HelperText="Obrigatório"
+                            InputType="Numeric"
+                            MaxLength="9"
+                            LeadingIcon="phone"/>
+
+                        <Grid ColumnSpacing="0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <material:MaterialButton x:Name="btSalvar" Grid.Column="1" BackgroundColor="#46D57B" HorizontalOptions="FillAndExpand" Clicked="tbSalvar_Clicked" Text="Salvar" ButtonType="Flat"/>
+                            <material:MaterialButton x:Name="tbListar" Grid.Column="2" Text="Listar" ButtonType="Outlined" Command="{Binding teste}"/>
+                        </Grid>
+                    </StackLayout>
+
+                </shade:Shadows>
+                <StackLayout HorizontalOptions="FillAndExpand" Grid.Row="1"  Padding="30">
+                    <zxing:ZXingBarcodeImageView WidthRequest="400" HeightRequest="200"
+                                         BarcodeValue="{Binding codeValue}" BarcodeFormat="QR_CODE">
+                        <zxing:ZXingBarcodeImageView.BarcodeOptions>
+                            <zcommom:EncodingOptions Width="400" Height="200"/>
+                        </zxing:ZXingBarcodeImageView.BarcodeOptions>
+                    </zxing:ZXingBarcodeImageView>
+                </StackLayout>
+                <material:MaterialIconButton Grid.Row="2" Image="print" ButtonType="Outlined" VerticalOptions="Start" 
+                                             HorizontalOptions="End" WidthRequest="70"  
+                                             HeightRequest="70" Padding="0,0,10,0"/>
+            </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

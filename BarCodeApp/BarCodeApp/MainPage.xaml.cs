@@ -18,6 +18,9 @@ namespace BarCodeApp
         public MainPage()
         {
             InitializeComponent();
+
+            btGerar.Clicked += btGerar_Clicked;
+            btLer.Clicked += btGerar_Clicked;
         }
 
         private async void btGerar_Clicked(object sender, EventArgs e)
@@ -25,6 +28,9 @@ namespace BarCodeApp
             Button bt = (sender as Button);
             if (bt.Text.ToUpper().Equals("LER"))
                 await Navigation.PushAsync(new MaterialNavigationPage(new LerCodigo()));
+            else if (bt.Text.ToUpper().Equals("GERAR"))
+                await Navigation.PushAsync(new MaterialNavigationPage(new GerarCodigo()));
+        }
         }
     }
-}
+

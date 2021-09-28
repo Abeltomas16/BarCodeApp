@@ -21,10 +21,12 @@
 
   <ItemGroup>
     <Folder Include="Models\" />
-    <Folder Include="ViewModel\" />
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Update="View\GerarCodigo.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="View\LerCodigo.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
