@@ -27,9 +27,9 @@ namespace BarCodeApp
         {
             Button bt = (sender as Button);
             if (bt.Text.ToUpper().Equals("LER"))
-                await Navigation.PushAsync(new MaterialNavigationPage(new LerCodigo()));
+                await Navigation.PushAsync(new LerCodigo());
             else if (bt.Text.ToUpper().Equals("GERAR"))
-                await Navigation.PushAsync(new MaterialNavigationPage(new GerarCodigo()));
+                await Navigation.PushAsync(new GerarCodigo());
         }
         }
     }
