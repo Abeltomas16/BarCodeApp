@@ -16,7 +16,7 @@
              xmlns:shade="clr-namespace:Sharpnado.Shades;assembly=Sharpnado.Shadows"
              mc:Ignorable="d"
              x:Class="BarCodeApp.View.GerarCodigo"
-             Title="Registrar cliente">
+             Title="Registrar">
     <ContentPage.Content>
         <ScrollView>
             <Grid>
