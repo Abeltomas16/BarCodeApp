@@ -19,5 +19,6 @@
              Disappearing="ContentPage_Disappearing">
     <StackLayout>
         <zxing:ZXingScannerView x:Name="scannv" IsAnalyzing="True" IsScanning="True" OnScanResult="ZXingScannerView_OnScanResult"/>
+        <material:MaterialIconButton x:Name="flash" Image="flash" ButtonType="Text" HeightRequest="64" Clicked="flash_Clicked" />
     </StackLayout>
 </ContentPage>

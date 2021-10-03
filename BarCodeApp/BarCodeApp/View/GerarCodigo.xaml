@@ -27,9 +27,9 @@
                 </Grid.RowDefinitions>
                 <shade:Shadows Grid.Row="0" CornerRadius="20" BackgroundColor="Blue"
                         VerticalOptions="Start"
-                           Shades="{shade:SingleShade Offset='0,10',
+                           Shades="{shade:SingleShade Offset='0,1',
                                                        Color=Black,
-                                                        BlurRadius=20,
+                                                        BlurRadius=50,
                                                         Opacity=0.8}">
 
                     <StackLayout BackgroundColor="White" Padding="10">

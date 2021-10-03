@@ -8,7 +8,7 @@
              material:MaterialNavigationPage.StatusBarColor="White"
              material:MaterialNavigationPage.AppBarTitleTextFontFamily="Roboto" 
              material:MaterialNavigationPage.AppBarTitleTextColor="Black"
-             BarTextColor="Black"
+             BarTextColor="White"
              material:MaterialNavigationPage.AppBarTitleTextFontSize="14"          
              material:MaterialNavigationPage.AppBarTitleTextAlignment="Start"
              material:MaterialNavigationPage.HasShadow="False"
@@ -17,6 +17,6 @@
              mc:Ignorable="d"
              x:Class="BarCodeApp.MainPage"
              Title="Kulawa App">
-    <views:LerCodigo/>
-    <views:GerarCodigo/>
+    <views:LerCodigo IconImageSource="pesquisar"/>
+    <views:GerarCodigo IconImageSource="registar"/>
 </TabbedPage>
